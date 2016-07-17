@@ -1,16 +1,40 @@
-<ion-view view-title="main module">
+<ion-view view-title="Dashboard">
   <!-- do you want padding? -->
   <ion-content class="padding">
 
     <!-- content goes here -->
-    <ion-list>
-      <ion-item class="item item-divider">
-        This is your dashboard template!
-      </ion-item>
-      <ion-item class="item item-icon">
-        Yeiiii!
-      </ion-item>
-    </ion-list>
+    <div class="list">
 
+      <ion-item class="item item-icon">
+        <!-- Theme blue-light is defined is css -->
+        <ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
+      </ion-item>
+
+      <ion-item class="item item-icon">
+        <!-- Theme blue-light is defined is css -->
+        <div class="button-bar">
+          <a ng-repeat="d in data.list"
+             class="button"
+             ng-class="d.selected ? 'button-royal' : 'button-dark'"
+             ng-bind="d.label"
+             ng-click="onClick(d)"
+          ></a>
+        </div>
+      </ion-item>
+
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{data.selected.image}}">
+        <!--<p>-->
+          <!--This is a "Facebook" styled Card. The header is created from a Thumbnail List item,-->
+          <!--the content is from a card-body consisting of an image and paragraph text. The footer-->
+          <!--consists of tabs, icons aligned left, within the card-footer.-->
+        <!--</p>-->
+        <!--<p>-->
+          <!--<a href="#" class="subdued">1 Like</a>-->
+          <!--<a href="#" class="subdued">5 Comments</a>-->
+        <!--</p>-->
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>
