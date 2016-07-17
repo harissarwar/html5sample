@@ -1,0 +1,28 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "html5sample",
+      "appId": "com.bytesol.html5sample",
+      "ionicCss": true,
+      "bowerPackages": [
+        "localforage#~1.4.0"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-dialogs",
+        "cordova-plugin-inappbrowser",
+        "ionic-plugin-keyboard",
+        "cordova-plugin-network-information",
+        "cordova-plugin-splashscreen",
+        "cordova-plugin-statusbar"
+      ],
+      "appModule": "html5sample",
+      "ecosystems": [
+        "ionic-platform"
+      ]
+    }
+  }
+}
