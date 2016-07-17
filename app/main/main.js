@@ -8,7 +8,7 @@ angular.module('main', [
 .config(function ($stateProvider, $urlRouterProvider) {
 
   // ROUTING with ui.router
-  $urlRouterProvider.otherwise('/main/list');
+  $urlRouterProvider.otherwise('/main/dashboard');
   $stateProvider
     // this state is placed in the <ion-nav-view> in the index.html
     .state('main', {
@@ -17,30 +17,21 @@ angular.module('main', [
       templateUrl: 'main/templates/menu.html',
       controller: 'MenuCtrl as menu'
     })
-      .state('main.list', {
-        url: '/list',
+      .state('main.dashboard', {
+        url: '/dashboard',
         views: {
           'pageContent': {
-            templateUrl: 'main/templates/list.html',
-            // controller: '<someCtrl> as ctrl'
+            templateUrl: 'main/templates/dashboard.html',
+            controller: 'DashboardCtrl as ctrl'
           }
         }
       })
-      .state('main.listDetail', {
-        url: '/list/detail',
+      .state('main.settings', {
+        url: '/settings',
         views: {
           'pageContent': {
-            templateUrl: 'main/templates/list-detail.html',
-            // controller: '<someCtrl> as ctrl'
-          }
-        }
-      })
-      .state('main.debug', {
-        url: '/debug',
-        views: {
-          'pageContent': {
-            templateUrl: 'main/templates/debug.html',
-            controller: 'DebugCtrl as ctrl'
+            templateUrl: 'main/templates/settings.html',
+            controller: 'SettingsCtrl as ctrl'
           }
         }
       });
